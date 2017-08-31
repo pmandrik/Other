@@ -259,7 +259,7 @@ void s2_run_bayesian_analyse(RooWorkspace * workspace){
     auto niter = argset->createIterator();
     auto nvar = niter->Next();
     int index = 0;
-    while( nvar ){RooStats::ModelConfig* mconf = (RooStats::ModelConfig*)workspace->obj("ModelConfig"); // get histfactory modelconfig
+    while( nvar ){
       *vals.at(index) = argset->getRealValue( nvar->GetName() );
       index++;
       nvar = niter->Next();
