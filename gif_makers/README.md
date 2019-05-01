@@ -12,3 +12,5 @@ gifsicle -i out.gif -O3 --scale 0.5 --use-colormap gray --color-method median-cu
 gifsicle -i out.gif -O3 --scale 0.75 --colors 50 -o out_scale.gif
 
 convert out.gif -monochrome out_mono.gif
+
+ffmpeg -f concat -safe 0 -i <(find . -name '*.avi' -printf "file '$PWD/%p'\n") -c:v libvpx-vp9 -c:a libopus  -c copy output.avi
