@@ -1,0 +1,187 @@
+\RequirePackage{luatex85}
+
+
+\documentclass{standalone}
+\usepackage{tikz} 
+%include other needed packages here
+\usepackage{tikz-feynman}
+
+\tikzfeynmanset{compat=1.0.0}
+
+\tikzfeynmanset{
+  myblob/.style={
+  shape=circle,
+  draw=red,
+  fill=red,
+  minimum size=0.25cm,
+  scale=0.25
+  }
+}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\begin{document}
+
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tqg}~~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [gluon] c [particle=\(g\)],
+      d [particle=\(t\)] -- [fermion] b,
+    };
+
+
+
+
+
+
+
+
+
+\iffalse
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tqg}~~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [gluon] c [particle=\(g\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+\fi  
+
+\iffalse
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tq\gamma}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(\gamma\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+\fi  
+
+\iffalse
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ X_{tqZ},~\kappa_{tqZ}~~~~~~~~~~~~~~ }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(Z^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+\fi  
+
+\iffalse
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({\kappa_{tqH}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [scalar] c [particle=\(H^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+\fi  
+
+\iffalse
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tqg}~~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [gluon] c [particle=\(g\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tq\gamma}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(\gamma\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ X_{tqZ},~\kappa_{tqZ}~~~~~~~~~~~~~~ }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(Z^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({\kappa_{tqH}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [scalar] c [particle=\(H^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+\end{figure} 
+\fi 
+
+\end{document}
+
+
+
+\iffalse
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\pgfrealjobname{survey}
+
+
+\tikzexternalize
+\tikzfeynmanset{compat=1.0.0}
+
+\tikzfeynmanset{
+  myblob/.style={
+  shape=circle,
+  draw=black,
+  fill=black,
+  minimum size=0.25cm,
+  scale=0.25
+  }
+}
+
+\begin{document}
+  \beginpgfgraphicnamed{survey-f1}
+  \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tqg}~~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [gluon] c [particle=\(g\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+   \endpgfgraphicnamed
+        
+\end{document}
+\fi
+
+\iffalse
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tqg}~~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [gluon] c [particle=\(g\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ \kappa_{tq\gamma}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(\gamma\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({ X_{tqZ},~\kappa_{tqZ}~~~~~~~~~~~~~~ }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [boson] c [particle=\(Z^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \begin{subfigure}[t]{0.24\textwidth}
+    \centering
+    \feynmandiagram [inline=(d.base), horizontal=d to b] {
+      b [myblob,label=\({\kappa_{tqH}~~~~  }\)] -- [fermion] a [particle=\({u,c}\)],
+      b -- [scalar] c [particle=\(H^0\)],
+      d [particle=\(t\)] -- [fermion] b,
+      };
+  \end{subfigure}
+  \caption{Diagrams for top quark decays mediated by FCNC couplings.}
+  \label{fcnc_decays}       % Give a unique label
+\end{figure} 
+\fi
+
