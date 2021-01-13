@@ -1,0 +1,50 @@
+
+0. Set ATLAS enviroment
+qq_setup_root ;
+lsetup "root 6.20.06-x86_64-centos7-gcc8-opt" ;
+
+1. LHAPDF install (boost was installed before suddenly)
+wget https://lhapdf.hepforge.org/downloads/LHAPDF-6.1.6.tar.gz -O LHAPDF-6.X.Y.tar.gz
+tar xf LHAPDF-6.X.Y.tar.gz
+cd LHAPDF-6.1.6
+mkdir ../LHAPDF-6.1.6_build_def
+./configure --prefix=/afs/ihep.su/user/m/mandrikp/powheg_HH/LHAPDF-6.1.6_build
+make install
+
+Upload PDF sets to the LHAPDF-6.1.6_build/share/LHAPDF/ folder
+
+2. Change in /afs/ihep.su/user/m/mandrikp/powheg_HH/POWHEG-BOX-V2_back/ggHH/Makefile
+LHAPDF_CONFIG=/afs/ihep.su/user/m/mandrikp/powheg_HH/LHAPDF-6.1.6_build/bin/lhapdf-config
+LIBS+= $(shell /cvmfs/sft.cern.ch/lcg/releases/LCG_97python3/Python/3.6.5/x86_64-slc6-gcc8-opt/bin/python3-config --ldflags)
+CCFLAGS+= $(shell /cvmfs/sft.cern.ch/lcg/releases/LCG_97python3/Python/3.6.5/x86_64-slc6-gcc8-opt/bin/python3-config --cflags)
+
+3. Make /cvmfs/sft.cern.ch/lcg/releases/LCG_97python3/Python/3.6.5/x86_64-slc6-gcc8-opt/bin/python3 work (for the run) :
+unset PYTHONPATH
+unset PYTHONHOME 
+
+4. in the ggHH folder :
+make -j 4
+
+PDF set 303600 is not working X:-C
+
+===========================================================
+NOT_WORKING WAY with default UI enviroment
+
+1. LHAPDF install (boost was installed before suddenly)
+
+wget https://lhapdf.hepforge.org/downloads/LHAPDF-6.1.6.tar.gz -O LHAPDF-6.X.Y.tar.gz
+tar xf LHAPDF-6.X.Y.tar.gz
+cd LHAPDF-6.1.6
+mkdir ../LHAPDF-6.1.6_build_def
+./configure --prefix=/afs/ihep.su/user/m/mandrikp/powheg_HH/LHAPDF-6.1.6_build_def --with-boost=/lustre/ihep.su/data/atlas/mandrik/MG5_aMC_v2_6_3_2/HEPTools/boost
+make install
+
+2. Change in /afs/ihep.su/user/m/mandrikp/powheg_HH/POWHEG-BOX-V2_back/ggHH/Makefile
+
+LHAPDF_CONFIG=/afs/ihep.su/user/m/mandrikp/powheg_HH/LHAPDF-6.1.6_build_def/bin/lhapdf-config
+LIBS+= $(shell /cvmfs/sft.cern.ch/lcg/releases/LCG_97python3/Python/3.6.5/x86_64-slc6-gcc8-opt/bin/python3-config --ldflags)
+CCFLAGS+= $(shell /cvmfs/sft.cern.ch/lcg/releases/LCG_97python3/Python/3.6.5/x86_64-slc6-gcc8-opt/bin/python3-config --cflags)
+
+Unfortunatly, ggHH package not compilable under this env
+
+
