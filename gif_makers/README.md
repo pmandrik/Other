@@ -17,3 +17,8 @@ ffmpeg -f concat -safe 0 -i <(find . -name '*.avi' -printf "file '$PWD/%p'\n") -
 
 RGBA -> RGB  
 convert Devochka_4.png -flatten +matte Devochka_4.png  
+
+VIDEO GOOD QUALITY  
+ffmpeg -r 60 -pattern_type glob -i '*.png' -r 60 -b 4M out.mp4  
+ffmpeg -i out.mp4 -map 0:v -c:v copy -bsf:v h264_mp4toannexb raw.h264  
+ffmpeg -fflags +genpts -r 15 -i raw.h264 -c:v copy outx.mp4  
