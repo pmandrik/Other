@@ -31,4 +31,6 @@ ffmpeg -i 11222.avi -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" 1111.mp4
 **ping pong loop**  
  convert out.gif -coalesce -duplicate 1,-2-1 -quiet -layers OptimizePlus -loop 0 OutputPatrolCycleFile.gif
 
- 
+**change gif speed**  
+ convert -delay 10x100 your.gif your_slow.gif
+
