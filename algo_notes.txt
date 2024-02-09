@@ -1,0 +1,16 @@
+*** Maximum Weight Matching
+Engineering Algorithms for Approximate Weighted Matching
+https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=c3d6e6e4e5ee015e464031172c57c1aed5fadc92
+
+A simple approximation algorithm for the weighted matching problem
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi57-O4wJ6EAxVGJRAIHeNiAHQQFnoECBEQAQ&url=https%3A%2F%2Fopus4.kobv.de%2Fopus4-matheon%2Ffiles%2F122%2F138.pdf&usg=AOvVaw0tOx8EnIh9WliP6gzDNGxX&opi=89978449
+
+FASTER SCALING ALGORITHMS FOR NETWORK PROBLEMS
+https://web.eecs.umich.edu/~pettie/matching/Gabow-Tarjan-scaling-bipartite-matching.pdf
+
+Linear-Time Approximation for Maximum Weight Matching
+https://web.eecs.umich.edu/~pettie/papers/ApproxMWM-JACM.pdf
+
+https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
+https://cp-algorithms.com/graph/kuhn_maximum_bipartite_matching.html
+https://www.geeksforgeeks.org/maximum-bipartite-matching/
