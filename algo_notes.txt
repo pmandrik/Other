@@ -14,3 +14,8 @@ https://web.eecs.umich.edu/~pettie/papers/ApproxMWM-JACM.pdf
 https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm
 https://cp-algorithms.com/graph/kuhn_maximum_bipartite_matching.html
 https://www.geeksforgeeks.org/maximum-bipartite-matching/
+
+*** Shared Memory
+**** Lock & lock free sync
+https://www.codeproject.com/Articles/153898/Yet-another-implementation-of-a-lock-free-circul
+https://www.drdobbs.com/lock-free-data-structures/184401865
